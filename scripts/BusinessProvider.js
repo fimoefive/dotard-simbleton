@@ -134,5 +134,5 @@ export const newYorkBusiness = businesses.filter(businessObj => {
     fullName: ${businessObj.purchasingAgent.nameFirst}, + " " + ${businessObj.purchasingAgent.nameLast},
     companyName: ${businessObj.companyName},
     phoneNumber: ${businessObj.phoneWork}
-  }`
+  }`;
 });

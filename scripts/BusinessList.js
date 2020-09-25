@@ -1,25 +1,57 @@
-import { useBusinesses, purchaserAgent, findPurchaser } from "./BusinessProvider.js";
-import { newYorkBusiness, manufacturingBusinesses } from "./BusinessProvider.js";
+import { useBusinesses, purchaserAgent, manufacturingBusinesses, newYorkBusiness  } from "./BusinessProvider.js";
 import { businessmanufacturHTML, newYorkBusinessesHTML, agentHTML } from "./Business.js";
-
 
 const contentTarget = document.querySelector(".business");
 const nyContentTarget = document.querySelector(".businessList--newYork");
+const manufacturingBusinessTarget = document.querySelector(".businessList--manufacturing");
 const agentContentTarget = document.querySelector(".agents");
 
 export const businessList = () => {
     const businessArray = useBusinesses();
 
-    const newYorkBusinessHTML = "<h1>Active Businesses</h1>";
+    contentTarget.innerHTML = "<h1>Active Businesses</h1>"
+
     businessArray.forEach(
         (businessObject) => {
             contentTarget.innerHTML += businessmanufacturHTML(businessObject)
         }
     );
-    newYorkBusinessHTML.innerHTML += `
+    ContentTarget.innerHTML += `
         ${newYorkBusinessHTML}
     `
 };
+
+export const nybusinessList = () => {
+    const nyBusinessArray = newYorkBusiness
+
+    nyContentTarget.innerHTML = "<h3>New York Businesses</h3>"
+
+    nyBusinessArray.forEach(
+        (nybusiness) => {
+            ny
+        }
+    )
+};
+
+export const manufacturingBusinessesList = () => {
+    const manBusinessArray = manufacturingBusinesses
+
+    manufacturingBusinessTarget.innerHTML = "<h3>Manufacturing Businesses</h3>"
+};
+
+export const agentList = () => {
+    const agentArray = purchaserAgent
+
+    agentContentTarget.innerHTML = "<h3>Purchasing Agents</h3>"
+};
+
+
+
+
+
+
+
+
 
 export const findPurchaser = (name) => {
     return businesses.find(business => business.purchasingAgent.nameFirst.includes(name) || business.purchasingAgent.nameLast.includes(name))
