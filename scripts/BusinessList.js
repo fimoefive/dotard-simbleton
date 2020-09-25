@@ -1,7 +1,6 @@
 import { useBusinesses, purchaserAgent, manufacturingBusinesses, newYorkBusiness  } from "./BusinessProvider.js";
 import { businessmanufacturHTML, newYorkBusinessesHTML, agentHTML } from "./Business.js";
 
-const contentTarget = document.querySelector(".business");
 const nyContentTarget = document.querySelector(".businessList--newYork");
 const manufacturingBusinessTarget = document.querySelector(".businessList--manufacturing");
 const agentContentTarget = document.querySelector(".agents");
