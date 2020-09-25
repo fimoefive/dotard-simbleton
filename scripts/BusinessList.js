@@ -1,4 +1,4 @@
-import { useBusinesses, purchaserAgent, manufacturingBusinesses, newYorkBusiness  } from "./BusinessProvider.js";
+import { useBusinesses, purchaserAgent, manufacturingBusinesses, newYorkBusiness } from "./BusinessProvider.js";
 import { businessmanufacturHTML, newYorkBusinessesHTML, agentHTML } from "./Business.js";
 
 const nyContentTarget = document.querySelector(".businessList--newYork");
@@ -78,3 +78,8 @@ document
             `;
         }
     });
+
+//     const allOfBusinesses = useBusinesses();
+//     for (const business of allOfBusinesses) {
+//         console.log(business)
+//    };
