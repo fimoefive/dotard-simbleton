@@ -16,3 +16,5 @@ contentTarget.innerHTML = BusinessList();
  for (const business of allOfBusinesses) {
      console.log(business)
 };
+useBusinesses();
+BusinessList();

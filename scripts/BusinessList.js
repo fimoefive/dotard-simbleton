@@ -1,5 +1,4 @@
 import { useBusinesses, purchaserAgentNames, findPurchaser } from "./BusinessProvider.js"
-// import { purchaserAgentNames, findPurchaser } from "./BusinessProvider.js
 // import { maineBusiness, healthCareBusinesses } from "./BusinessProvider.js"
 import { Business } from "./Business.js"
 
