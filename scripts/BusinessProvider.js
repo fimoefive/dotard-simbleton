@@ -112,24 +112,24 @@ const businesses = [
   ];
 
  export const useBusinesses = () => {
-    return businesses.forEach()
+    return businesses.slice()
 };
 
-export const maineBusiness = businesses.filter(businessObj => {
+export const newYorkBusiness = businesses.filter(businessObj => {
     if (businessObj.addressStateCode === "NY") {
         return true;
     }
     return false;
-  });
+  })
   
-  export const healthCareBusinesses = businesses.filter(businessObj => {
+  export const manufacturingBusinesses = businesses.filter(businessObj => {
     if (businessObj.companyIndustry === "Manufacturing") {
         return true;
     }
     return false;
   });
 
-  export const purchaserAgentNames = businesses.map(businessObj => {
+  export const purchaserAgent = businesses.map(businessObj => {
   return `{ 
     fullName: ${businessObj.purchasingAgent.nameFirst} + " " + ${businessObj.purchasingAgent.nameLast},
     companyName: ${businessObj.companyName},
@@ -142,4 +142,3 @@ export const findPurchaser = (name) => {
   };
 
 // businesses.forEach( useBusiness => console.log(useBusiness));
-// export default useBusiness;
