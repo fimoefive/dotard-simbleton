@@ -1,5 +1,5 @@
 
-export const businessHTML = (businessObject) => {
+export const businessmanufacturHTML = (businessObject) => {
     return `
         <section class="business">
             <h2 class="company__name">${businessObject.companyName}</h2>

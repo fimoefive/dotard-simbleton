@@ -131,14 +131,8 @@ export const newYorkBusiness = businesses.filter(businessObj => {
 
   export const purchaserAgent = businesses.map(businessObj => {
   return `{ 
-    fullName: ${businessObj.purchasingAgent.nameFirst} + " " + ${businessObj.purchasingAgent.nameLast},
+    fullName: ${businessObj.purchasingAgent.nameFirst}, + " " + ${businessObj.purchasingAgent.nameLast},
     companyName: ${businessObj.companyName},
     phoneNumber: ${businessObj.phoneWork}
   }`
 });
-
-export const findPurchaser = (name) => {
-    return businesses.find(business => business.purchasingAgent.nameFirst.includes(name) || business.purchasingAgent.nameLast.includes(name))
-  };
-
-// businesses.forEach( useBusiness => console.log(useBusiness));
