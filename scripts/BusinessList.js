@@ -6,52 +6,38 @@ const nyContentTarget = document.querySelector(".businessList--newYork");
 const manufacturingBusinessTarget = document.querySelector(".businessList--manufacturing");
 const agentContentTarget = document.querySelector(".agents");
 
-export const businessList = () => {
-    const businessArray = useBusinesses();
-
-    contentTarget.innerHTML = "<h1>Active Businesses</h1>"
-
-    businessArray.forEach(
-        (businessObject) => {
-            contentTarget.innerHTML += businessmanufacturHTML(businessObject)
-        }
-    );
-    ContentTarget.innerHTML += `
-        ${newYorkBusinessHTML}
-    `
-};
-
-export const nybusinessList = () => {
+export const nyBusinessList = () => {
     const nyBusinessArray = newYorkBusiness
 
     nyContentTarget.innerHTML = "<h3>New York Businesses</h3>"
 
     nyBusinessArray.forEach(
         (nybusiness) => {
-            ny
-        }
-    )
+            nyContentTarget.innerHTML += newYorkBusinessesHTML(nybusiness)
+        })
 };
 
 export const manufacturingBusinessesList = () => {
     const manBusinessArray = manufacturingBusinesses
 
     manufacturingBusinessTarget.innerHTML = "<h3>Manufacturing Businesses</h3>"
+
+    manBusinessArray.forEach(
+        (manBusiness) => {
+            manufacturingBusinessTarget.innerHTML += businessmanufacturHTML(manBusiness)
+        })
 };
 
 export const agentList = () => {
     const agentArray = purchaserAgent
 
     agentContentTarget.innerHTML = "<h3>Purchasing Agents</h3>"
+
+    agentArray.forEach(
+        (agent) => {
+            agentContentTarget.innerHTML += agentHTML(agent)
+        })
 };
-
-
-
-
-
-
-
-
 
 export const findPurchaser = (name) => {
     return businesses.find(business => business.purchasingAgent.nameFirst.includes(name) || business.purchasingAgent.nameLast.includes(name))
