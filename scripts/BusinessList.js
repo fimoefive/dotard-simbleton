@@ -1,25 +1,26 @@
-import { useBusinesses, purchaserAgent, manufacturingBusinesses, newYorkBusiness } from "./BusinessProvider.js";
+import { useBusinesses, usepurchaserAgent, usemanufacturingBusinesses, useNewYorkBusinesses } from "./BusinessProvider.js";
 import { businessmanufacturHTML, newYorkBusinessesHTML, agentHTML } from "./Business.js";
 
 const nyContentTarget = document.querySelector(".businessList--newYork");
 const manufacturingBusinessTarget = document.querySelector(".businessList--manufacturing");
 const agentContentTarget = document.querySelector(".agents");
 
-export const nyBusinessList = () => {
-    const nyBusinessArray = newYorkBusiness
 
-    nyContentTarget.innerHTML = "<h3>New York Businesses</h3>"
+export const nyBusinessList = () => {
+    const nyBusinessArray = useNewYorkBusinesses()
+
+    nyContentTarget.innerHTML = "<h2>New York Businesses</h2>"
 
     nyBusinessArray.forEach(
-        (nybusiness) => {
-            nyContentTarget.innerHTML += newYorkBusinessesHTML(nybusiness)
+        (business) => {
+            nyContentTarget.innerHTML += newYorkBusinessesHTML(business)
         })
 };
 
-export const manufacturingBusinessesList = () => {
-    const manBusinessArray = manufacturingBusinesses
+export const manufacturingBusList = () => {
+    const manBusinessArray = usemanufacturingBusinesses();
 
-    manufacturingBusinessTarget.innerHTML = "<h3>Manufacturing Businesses</h3>"
+    manufacturingBusinessTarget.innerHTML = "<h2>Manufacturing Businesses</h2>"
 
     manBusinessArray.forEach(
         (manBusiness) => {
@@ -28,9 +29,9 @@ export const manufacturingBusinessesList = () => {
 };
 
 export const agentList = () => {
-    const agentArray = purchaserAgent
+    const agentArray = usepurchaserAgent()
 
-    agentContentTarget.innerHTML = "<h3>Purchasing Agents</h3>"
+    agentContentTarget.innerHTML = "<h2>Purchasing Agents</h2>"
 
     agentArray.forEach(
         (agent) => {
@@ -40,17 +41,17 @@ export const agentList = () => {
 
 export const findPurchaser = (name) => {
     return businesses.find(business => business.purchasingAgent.nameFirst.includes(name) || business.purchasingAgent.nameLast.includes(name))
-  };
+};
 
 // businesses.forEach( useBusiness => console.log(useBusiness));
 
 // Place an article element in your HTML with the class below
-const companySearchResultArticle = document.querySelector(".foundCompanies")
+const agentSearchResultArticle = document.querySelector(".foundPurchasers");
 
 document
-    .querySelector("#companySearch")
-    .addEventListener("keypress", keyPressEvent => {
-        if (keyPressEvent.charCode === 13) {
+    .querySelector("#purchaserSearch")
+    .addEventListener("keypress", keypressEvent => {
+        if (clickEvent.charCode === 13) {
             /*
                 When user presses enter, find the matching business.
                 You can use the `.includes()` method strings to
@@ -60,20 +61,22 @@ document
                     business.companyName.includes(keyPressEvent.target.value)
             */
 
-            const foundBusiness = // implement .find() method here
-
-            companySearchResultArticle.innerHTML = `
+            // implement .find() method here
+    const foundAgent = agentSearchResultArticle.find(agent => {
+        const agents = agent.companyName.includes(keypressEvent.target.value)
+        //  (agent.fullName.toLowerCase()
+        // .includes(keypressEvent.target.value))
+        return agents;
+    })
+            agentSearchResultArticle.innerHTML = `
                 <h2>
-                ${foundBusiness.companyName}
+                ${foundAgent.fullName}
                 </h2>
                 <section>
-                ${foundBusiness.addressFullStreet}
-
+                ${foundAgent.companyName}
                 </section>
                 <section>
-                ${foundBusiness.addressCity},
-                ${foundBusiness.addressStateCode}
-                ${foundBusiness.addressZipCode}
+                ${foundAgent.phoneNumber}
                 </section>
             `;
         }

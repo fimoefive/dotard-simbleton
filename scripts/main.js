@@ -1,5 +1,7 @@
-import { BusinessList } from "./BusinessList.js";
+import { nyBusinessList, manufacturingBusList, agentList } from "./BusinessList.js";
 
 // const contentTarget = document.querySelector(".business");
 
-BusinessList();
+nyBusinessList();
+manufacturingBusList();
+agentList();
