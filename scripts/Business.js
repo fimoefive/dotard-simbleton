@@ -1,4 +1,3 @@
-
 export const businessmanufacturHTML = (businessObject) => {
     return `
         <section class="business">
