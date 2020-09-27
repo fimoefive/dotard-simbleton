@@ -29,8 +29,8 @@ export const agentHTML = (agentObj) => {
     return `
         <section class="agents">
             <h2 class="agent-name">${agentObj.fullName}</h2>
-            <div class="agent-company">${agentObj.company}</div>
-            <div class="agent-phone">${agentObj.phoneNumber}</div>
+            <div>${agentObj.company}</div>
+            <div>${agentObj.phoneNumber}</div>
         </section>
     `
 };
